@@ -1,7 +1,7 @@
 # Introduction to Neuroimaging Data Analysis with Python
 
 > **Repository:** [https://github.com/ArunimGuchait/neuroimaging-intro](https://github.com/ArunimGuchait/neuroimaging-intro)  
-> **Last updated:** 2026-Feb-07
+> **Last updated:** 2026-Feb-08
 
 This folder contains **beginner-friendly Jupyter notebooks** that introduce neuroimaging (fMRI) data analysis in Python from scratch. The target is to reduce the initial fear of trying something completely new and complex. Every section is explained from the basics, assuming no prior knowledge.
 
@@ -9,6 +9,7 @@ This folder contains **beginner-friendly Jupyter notebooks** that introduce neur
 
 - **`introduction_python_for_neuroimaging.ipynb`** – **Chapter 01 (Prequel):** Python for complete beginners (variables, types, strings, lists, dicts, loops, functions, paths, NumPy, Pandas). No prior programming assumed.
 - **`introduction_neuroimaging_analysis.ipynb`** – **Chapter 02 (Main):** neuroimaging (fMRI) from scratch—NIfTI, voxels, public data, visualization, ROI extraction, and a first connectivity analysis.
+- **`task_based_fmri_analysis.ipynb`** – **Chapter 03 (Advanced):** Task-based fMRI analysis with the General Linear Model (GLM), hemodynamic response function (HRF), contrasts, statistical maps, and multiple comparisons correction.
 - **`requirements.txt`** – Python dependencies (nibabel, nilearn, numpy, pandas, matplotlib, jupyter).
 
 ## Setup
@@ -47,6 +48,7 @@ Good for students who prefer a browser-based environment or don’t want to inst
    - **Direct links:**
      - [Chapter 01: Python for Neuroimaging](https://colab.research.google.com/github/ArunimGuchait/neuroimaging-intro/blob/main/introduction_python_for_neuroimaging.ipynb)
      - [Chapter 02: Neuroimaging Analysis](https://colab.research.google.com/github/ArunimGuchait/neuroimaging-intro/blob/main/introduction_neuroimaging_analysis.ipynb)
+     - [Chapter 03: Task-Based fMRI Analysis](https://colab.research.google.com/github/ArunimGuchait/neuroimaging-intro/blob/main/task_based_fmri_analysis.ipynb)
    - **If you have the file locally:** go to [Google Colab](https://colab.research.google.com), then **File → Upload notebook**, and choose the `.ipynb` file.
 
 2. **Install dependencies**  
@@ -66,8 +68,9 @@ The notebook downloads a **small sample** of the public **development fMRI datas
 
 ## Suggested order
 
-1. **New to Python?** Run **`introduction_python_for_neuroimaging.ipynb`** first (needs only Python + Jupyter; NumPy and Pandas are used in the second half).
-2. **Then** run **`introduction_neuroimaging_analysis.ipynb`** (install deps from `requirements.txt` or the notebook's setup cell).
+1. **New to Python?** Run **`introduction_python_for_neuroimaging.ipynb`** (Chapter 01) first (needs only Python + Jupyter; NumPy and Pandas are used in the second half).
+2. **Then** run **`introduction_neuroimaging_analysis.ipynb`** (Chapter 02) to learn neuroimaging basics (install deps from `requirements.txt` or the notebook's setup cell).
+3. **Finally** run **`task_based_fmri_analysis.ipynb`** (Chapter 03) to learn task-based fMRI analysis with the General Linear Model.
 
 **Important:** We encourage you to **run all the cells yourself** and **play around with the code**—change values, try different parameters, and experiment! This hands-on approach will deepen your understanding far more than just reading. Don't worry about breaking things; that's part of the learning process.
 
@@ -80,15 +83,28 @@ The notebook downloads a **small sample** of the public **development fMRI datas
 
 ## Audience
 
-The neuroimaging notebook assumes **no prior knowledge** of neuroimaging or Python beyond basic concepts. It explains:
+These notebooks assume **no prior knowledge** of neuroimaging or advanced Python. The series progressively builds from basics to statistical analysis:
 
+**Chapter 01** (Python Basics):
+- Core Python: variables, types, strings, lists, dictionaries, loops, functions
+- Working with files and paths
+- NumPy arrays and Pandas DataFrames
+
+**Chapter 02** (Neuroimaging Basics):
 - What neuroimaging and fMRI are
 - NIfTI files, voxels, and 4D data
 - Using NiBabel and Nilearn to load, inspect, and plot data
-- Confounds and atlases
-- A first step in analysis (ROI time series and correlation matrix)
+- Confounds, atlases, and ROI time series extraction
+- Spatial smoothing and basic preprocessing
 
-For more advanced topics (full preprocessing, GLM, group analysis), see the "Summary and next steps" section.
+**Chapter 03** (Statistical Modeling):
+- Task-based fMRI experimental design
+- General Linear Model (GLM) for fMRI statistics
+- Hemodynamic Response Function (HRF)
+- Contrasts and statistical maps (z-scores, t-statistics)
+- Multiple comparisons correction (FDR, FWE)
+
+For even more advanced topics (group-level analysis, advanced preprocessing pipelines), see the "Summary and next steps" sections in each notebook.
 
 ## Questions or Ideas?
 
