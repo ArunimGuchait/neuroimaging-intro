@@ -7,9 +7,10 @@ This folder contains **beginner-friendly Jupyter notebooks** that introduce neur
 
 ## Contents
 
-- **`introduction_python_for_neuroimaging.ipynb`** – **Chapter 01 (Prequel):** Python for complete beginners (variables, types, strings, lists, dicts, loops, functions, paths, NumPy, Pandas). No prior programming assumed.
-- **`introduction_neuroimaging_analysis.ipynb`** – **Chapter 02 (Main):** neuroimaging (fMRI) from scratch—NIfTI, voxels, public data, visualization, ROI extraction, and a first connectivity analysis.
-- **`task_based_fmri_analysis.ipynb`** – **Chapter 03 (Advanced):** Task-based fMRI analysis with the General Linear Model (GLM), hemodynamic response function (HRF), contrasts, statistical maps, and multiple comparisons correction.
+- **`introduction_python_for_neuroimaging.ipynb`** – **Chapter 01:** Python for complete beginners (variables, types, strings, lists, dicts, loops, functions, paths, NumPy, Pandas).
+- **`introduction_to_human_brain.ipynb`** – **Chapter 02:** The human brain — basic anatomy, major cortical and subcortical structures, and functional systems overview.
+- **`introduction_neuroimaging_analysis.ipynb`** – **Chapter 03:** Neuroimaging (fMRI) basics—NIfTI files, voxels, public data, visualization, ROI extraction, and a first connectivity analysis.
+- **`task_based_fmri_analysis.ipynb`** – **Chapter 04:** Task-based fMRI analysis with the General Linear Model (GLM), hemodynamic response function (HRF), contrasts, statistical maps, and multiple comparisons correction.
 - **`requirements.txt`** – Python dependencies (nibabel, nilearn, numpy, pandas, matplotlib, jupyter).
 
 ## Setup
@@ -45,10 +46,11 @@ Good for students who prefer a browser-based environment or don’t want to inst
 
 1. **Open the notebook in Colab**
    - **From GitHub:** Go to [Google Colab](https://colab.research.google.com), then **File → Open notebook → GitHub**, and enter `https://github.com/ArunimGuchait/neuroimaging-intro`. Select the notebook you want to run.
-   - **Direct links:**
-     - [Chapter 01: Python for Neuroimaging](https://colab.research.google.com/github/ArunimGuchait/neuroimaging-intro/blob/main/introduction_python_for_neuroimaging.ipynb)
-     - [Chapter 02: Neuroimaging Analysis](https://colab.research.google.com/github/ArunimGuchait/neuroimaging-intro/blob/main/introduction_neuroimaging_analysis.ipynb)
-     - [Chapter 03: Task-Based fMRI Analysis](https://colab.research.google.com/github/ArunimGuchait/neuroimaging-intro/blob/main/task_based_fmri_analysis.ipynb)
+    - **Direct links:**
+       - [Chapter 01: Python for Neuroimaging](https://colab.research.google.com/github/ArunimGuchait/neuroimaging-intro/blob/main/introduction_python_for_neuroimaging.ipynb)
+       - [Chapter 02: Introduction to the Human Brain](https://colab.research.google.com/github/ArunimGuchait/neuroimaging-intro/blob/main/introduction_to_human_brain.ipynb)
+       - [Chapter 03: Neuroimaging Analysis](https://colab.research.google.com/github/ArunimGuchait/neuroimaging-intro/blob/main/introduction_neuroimaging_analysis.ipynb)
+       - [Chapter 04: Task-Based fMRI Analysis](https://colab.research.google.com/github/ArunimGuchait/neuroimaging-intro/blob/main/task_based_fmri_analysis.ipynb)
    - **If you have the file locally:** go to [Google Colab](https://colab.research.google.com), then **File → Upload notebook**, and choose the `.ipynb` file.
 
 2. **Install dependencies**  
@@ -64,13 +66,47 @@ Good for students who prefer a browser-based environment or don’t want to inst
 
 ## Data
 
-The notebook downloads a **small sample** of the public **development fMRI dataset** (OpenNeuro ds000228) the first time you run the download cell. Data is cached (e.g. in `~/nilearn_data`) so later runs are fast. No account or manual download is required.
+This collection of notebooks downloads and uses small, public example datasets (via Nilearn) to make the exercises reproducible and easy to run. Files are downloaded the first time a notebook calls the corresponding `nilearn.datasets` fetcher and are cached on disk for later runs.
+
+Datasets used by chapter:
+
+- Chapter 02 (`introduction_to_human_brain.ipynb`): ICBM152 T1 anatomical template (fetched with `nilearn.datasets.fetch_icbm152_2009()`) — used for slice visualization and basic image inspection.
+- Chapter 03 (`introduction_neuroimaging_analysis.ipynb`): development fMRI sample (OpenNeuro **ds000228**) fetched with `nilearn.datasets.fetch_development_fmri(...)` (the notebook uses `n_subjects=2` for speed). Also fetches atlases such as the Harvard–Oxford atlas via `nilearn.datasets.fetch_atlas_harvard_oxford()` for ROI extraction.
+- Chapter 04 (`task_based_fmri_analysis.ipynb`): SPM auditory task dataset (classic task-based example) fetched with `nilearn.datasets.fetch_spm_auditory()` — used for the first-level GLM demo.
+
+Where data is cached
+
+- By default Nilearn stores downloaded datasets in a cache directory (commonly `~/nilearn_data` on Linux/macOS or `%USERPROFILE%\\nilearn_data` on Windows). This keeps downloads small and makes repeated runs fast.
+
+Controlling the cache location
+
+Set the `NILEARN_DATA` environment variable before running the notebooks to change the cache location. Examples:
+
+```bash
+# Linux / macOS (bash)
+export NILEARN_DATA=~/nilearn_data
+
+# Windows (PowerShell)
+$env:NILEARN_DATA = "$HOME\\nilearn_data"
+```
+
+On Google Colab, runtime storage is ephemeral. To persist the cache between sessions mount Google Drive and set `NILEARN_DATA` to a folder on Drive (the notebooks include an optional Colab setup cell you can run to do this). Example (in a notebook cell):
+
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+import os
+os.environ['NILEARN_DATA'] = '/content/drive/MyDrive/nilearn_data'
+```
+
+If you prefer not to set `NILEARN_DATA`, Nilearn will use its default cache location. Ensure the chosen location has sufficient disk space for the datasets you intend to download.
 
 ## Suggested order
 
 1. **New to Python?** Run **`introduction_python_for_neuroimaging.ipynb`** (Chapter 01) first (needs only Python + Jupyter; NumPy and Pandas are used in the second half).
-2. **Then** run **`introduction_neuroimaging_analysis.ipynb`** (Chapter 02) to learn neuroimaging basics (install deps from `requirements.txt` or the notebook's setup cell).
-3. **Finally** run **`task_based_fmri_analysis.ipynb`** (Chapter 03) to learn task-based fMRI analysis with the General Linear Model.
+2. **Then** run **`introduction_to_human_brain.ipynb`** (Chapter 02) to learn core neuroanatomy and brain organization.
+3. **Next** run **`introduction_neuroimaging_analysis.ipynb`** (Chapter 03) to learn neuroimaging basics (install deps from `requirements.txt` or the notebook's setup cell).
+4. **Finally** run **`task_based_fmri_analysis.ipynb`** (Chapter 04) to learn task-based fMRI analysis with the General Linear Model.
 
 **Important:** We encourage you to **run all the cells yourself** and **play around with the code**—change values, try different parameters, and experiment! This hands-on approach will deepen your understanding far more than just reading. Don't worry about breaking things; that's part of the learning process.
 
@@ -128,6 +164,11 @@ We monitor discussions regularly and are happy to help. Don't hesitate to ask—
 
 Your input helps us improve this resource for everyone.
 
+## Additional curated resources
+
+- **fmri-analysis-resources**: A curated collection of tutorials, videos, and tools focused on fMRI analysis maintained by me. It complements this tutorial with deeper guides on FSL, fMRIPrep, Nilearn, NiBabel, and practical walkthroughs. Repository: https://github.com/ArunimGuchait/fmri-analysis-resources
+
 ---
+
 
 **Remember:** The goal of this course is to reduce the fear of trying something new and complex. Neuroimaging can seem intimidating, but by breaking it down into manageable steps and experimenting hands-on, you'll build confidence and understanding. Don't hesitate to explore, make mistakes, and learn from them!
