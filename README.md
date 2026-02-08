@@ -90,15 +90,27 @@ The neuroimaging notebook assumes **no prior knowledge** of neuroimaging or Pyth
 
 For more advanced topics (full preprocessing, GLM, group analysis), see the "Summary and next steps" section.
 
+## Questions or Ideas?
+
+Have a question? Want to share how you're using this? **[Start a Discussion](https://github.com/ArunimGuchait/neuroimaging-intro/discussions)!**
+
+This is the best place to:
+- Ask for help with setup or understanding the code
+- Share projects you've built using this tutorial
+- Suggest improvements or new examples
+- Connect with other learners
+
+We monitor discussions regularly and are happy to help. Don't hesitate to ask—every question helps improve this resource!
+
 ## Contributing
 
 **Suggestions and comments are always welcome!** If you find issues, have ideas for improvement, or want to contribute examples, please:
 
 - Open an issue on GitHub
 - Submit a pull request
-- Share your feedback
+- Share your feedback in [Discussions](https://github.com/ArunimGuchait/neuroimaging-intro/discussions)
 
-We want to make neuroimaging as accessible as possible, and your input helps us improve this resource for everyone.
+Your input helps us improve this resource for everyone.
 
 ---
 
