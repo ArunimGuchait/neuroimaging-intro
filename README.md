@@ -98,7 +98,7 @@ For more advanced topics (full preprocessing, GLM, group analysis), see the "Sum
 - Submit a pull request
 - Share your feedback
 
-We want to make neuroimaging as accessible as possible, and your input helps us improve this resource for everyone.
+Your input helps us improve this resource for everyone.
 
 ---
 
