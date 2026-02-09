@@ -127,14 +127,20 @@ These notebooks assume **no prior knowledge** of neuroimaging or advanced Python
 - Working with files and paths
 - NumPy arrays and Pandas DataFrames
 
-**Chapter 02** (Neuroimaging Basics):
+**Chapter 02** (Human Brain Anatomy):
+- Basic neuroanatomy and brain organization
+- Major cortical and subcortical structures
+- Functional systems overview
+- Brain visualization and coordinate systems
+
+**Chapter 03** (Neuroimaging Basics):
 - What neuroimaging and fMRI are
 - NIfTI files, voxels, and 4D data
 - Using NiBabel and Nilearn to load, inspect, and plot data
 - Confounds, atlases, and ROI time series extraction
 - Spatial smoothing and basic preprocessing
 
-**Chapter 03** (Statistical Modeling):
+**Chapter 04** (Statistical Modeling):
 - Task-based fMRI experimental design
 - General Linear Model (GLM) for fMRI statistics
 - Hemodynamic Response Function (HRF)
