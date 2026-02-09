@@ -1,7 +1,8 @@
 # Introduction to Neuroimaging Data Analysis with Python
 
 > **Repository:** [https://github.com/ArunimGuchait/neuroimaging-intro](https://github.com/ArunimGuchait/neuroimaging-intro)  
-> **Last updated:** 2026-Feb-08
+> **Version:** 1.0.0  
+> **Last updated:** 2026-Feb-09
 
 This folder contains **beginner-friendly Jupyter notebooks** that introduce neuroimaging (fMRI) data analysis in Python from scratch. The target is to reduce the initial fear of trying something completely new and complex. Every section is explained from the basics, assuming no prior knowledge.
 

@@ -14,6 +14,7 @@ affiliations:
   - name: Institute of Cognitive Neuroscience, National Central University, Taiwan
     index: 1
 date: 09 February 2026
+version: 1.0.0
 bibliography: paper.bib
 ---
 
