@@ -38,7 +38,7 @@ A **virtual environment** keeps your project dependencies isolated and avoids co
    ```bash
    jupyter notebook introduction_neuroimaging_analysis.ipynb
    ```
-   Or open the `.ipynb` file from Jupyter Lab, VS Code, or Cursor.
+   Or open the `.ipynb` file from Jupyter Lab, VS Code.
 
 
 ### Option 2: Run on Google Colab (no local install)
